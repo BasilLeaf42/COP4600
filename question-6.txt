@@ -1,0 +1,35 @@
+ch282858@eustis3:~/homework$ gcc question-6.c
+ch282858@eustis3:~/homework$ ./a.out
+0
+
+------------------------------------------------------------------------------------------------------------------
+
+ch282858@eustis3:~/homework$ valgrind --leak-check=yes ./question-6 -s
+==2684833== Memcheck, a memory error detector
+==2684833== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2684833== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2684833== Command: ./question-6 -s
+==2684833==
+==2684833== Invalid write of size 4
+==2684833==    at 0x1091B4: main (in /home/net/ch282858/homework/question-6)
+==2684833==  Address 0x4a5a1d0 is 224 bytes inside an unallocated block of size 4,194,032 in arena "client"
+==2684833==
+==2684833== Invalid read of size 4
+==2684833==    at 0x1091CA: main (in /home/net/ch282858/homework/question-6)
+==2684833==  Address 0x4a5a040 is 0 bytes inside a block of size 100 free'd
+==2684833==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2684833==    by 0x1091C5: main (in /home/net/ch282858/homework/question-6)
+==2684833==  Block was alloc'd at
+==2684833==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2684833==    by 0x1091A5: main (in /home/net/ch282858/homework/question-6)
+==2684833==
+0
+==2684833==
+==2684833== HEAP SUMMARY:
+==2684833==     in use at exit: 0 bytes in 0 blocks
+==2684833==   total heap usage: 2 allocs, 2 frees, 1,124 bytes allocated
+==2684833==
+==2684833== All heap blocks were freed -- no leaks are possible
+==2684833==
+==2684833== For lists of detected and suppressed errors, rerun with: -s
+==2684833== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

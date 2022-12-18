@@ -1,0 +1,59 @@
+ch282858@eustis3:~/homework$ gcc question-4.c
+ch282858@eustis3:~/homework$ ./a.out
+0
+
+------------------------------------------------------------------------------------------------------------------
+
+ch282858@eustis3:~/homework$ gcc question-4.c -o question-4
+ch282858@eustis3:~/homework$ gdb question-4
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from question-4...
+(No debugging symbols found in question-4)
+(gdb) run
+Starting program: /home/net/ch282858/homework/question-4
+0
+[Inferior 1 (process 2464721) exited normally]
+(gdb) 
+
+------------------------------------------------------------------------------------------------------------------
+
+ch282858@eustis3:~/homework$ valgrind --leak-check=yes ./question-4
+==2465004== Memcheck, a memory error detector
+==2465004== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2465004== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2465004== Command: ./question-4
+==2465004==
+0
+==2465004==
+==2465004== HEAP SUMMARY:
+==2465004==     in use at exit: 4 bytes in 1 blocks
+==2465004==   total heap usage: 2 allocs, 1 frees, 1,028 bytes allocated
+==2465004==
+==2465004== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==2465004==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2465004==    by 0x109185: main (in /home/net/ch282858/homework/question-4)
+==2465004==
+==2465004== LEAK SUMMARY:
+==2465004==    definitely lost: 4 bytes in 1 blocks
+==2465004==    indirectly lost: 0 bytes in 0 blocks
+==2465004==      possibly lost: 0 bytes in 0 blocks
+==2465004==    still reachable: 0 bytes in 0 blocks
+==2465004==         suppressed: 0 bytes in 0 blocks
+==2465004==
+==2465004== For lists of detected and suppressed errors, rerun with: -s
+==2465004== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+

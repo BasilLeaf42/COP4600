@@ -1,0 +1,38 @@
+ch282858@eustis3:~/homework$ valgrind --leak-check=yes ./question-1
+==2457184== Memcheck, a memory error detector
+==2457184== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2457184== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2457184== Command: ./question-1
+==2457184==
+==2457184== Invalid read of size 4
+==2457184==    at 0x1091BB: main (question-1.c:12)
+==2457184==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2457184==
+==2457184==
+==2457184== Process terminating with default action of signal 11 (SIGSEGV)
+==2457184==  Access not within mapped region at address 0x0
+==2457184==    at 0x1091BB: main (question-1.c:12)
+==2457184==  If you believe this happened as a result of a stack
+==2457184==  overflow in your program's main thread (unlikely but
+==2457184==  possible), you can try to increase the size of the
+==2457184==  main thread stack using the --main-stacksize= flag.
+==2457184==  The main thread stack size used in this run was 8388608.
+==2457184==
+==2457184== HEAP SUMMARY:
+==2457184==     in use at exit: 4 bytes in 1 blocks
+==2457184==   total heap usage: 1 allocs, 0 frees, 4 bytes allocated
+==2457184==
+==2457184== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==2457184==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2457184==    by 0x1091AA: main (question-1.c:10)
+==2457184==
+==2457184== LEAK SUMMARY:
+==2457184==    definitely lost: 4 bytes in 1 blocks
+==2457184==    indirectly lost: 0 bytes in 0 blocks
+==2457184==      possibly lost: 0 bytes in 0 blocks
+==2457184==    still reachable: 0 bytes in 0 blocks
+==2457184==         suppressed: 0 bytes in 0 blocks
+==2457184==
+==2457184== For lists of detected and suppressed errors, rerun with: -s
+==2457184== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Segmentation fault (core dumped)
