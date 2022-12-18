@@ -1,3 +1,0 @@
-ch282858@eustis3:~/homework$ gcc question-1.c
-ch282858@eustis3:~/homework$ ./a.out
-Segmentation fault (core dumped)

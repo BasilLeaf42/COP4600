@@ -1,0 +1,29 @@
+Overview:
+
+Based on the skeleton provided here: https://github.com/remzi-arpacidusseau/ostep-code/
+
+Instructions:
+
+-Add reliable communication to the burgeoning communication library, in the form of timeout/retry.
+-Specifically, the library should make a copy of any message that it is going to send.
+-When sending it, it should start a timer, so it can track how long it has been since the message was sent.
+-On the receiver, the library should acknowledge received messages.
+-The client send should block when sending, i.e., it should wait until the message has been acknowledged before returning.
+-It should also be willing to retry sending indefinitely.
+-The maximum message size should be that of the largest single message you can send with UDP.
+-Be sure to perform timeout/retry efficiently by putting the caller to sleep until either an ack arrives or the transmission times out.
+
+Expected output:
+
+Sever:
+
+server:: waiting...
+server:: read message [size:1000 contents:(hello world)]
+server:: reply
+server:: waiting...
+
+Client:
+
+client:: send message [hello world]
+client:: waiting for reply
+client:: got reply [size:1000 contents:(goodbye world)

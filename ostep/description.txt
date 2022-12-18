@@ -1,0 +1,8 @@
+Questions 1-7 in the Homework (Code) section (page 10) of Chapter 14 of the OSTEP book.
+
+Each question that asks to write a program (Qs 1, 4-6) has its own source file titled question-<number>.c where <number> is the question number.  i.e. question-1.c, question-4.c, etc.
+Included is one Makefile that compiles all of the source into individual executables.
+The Makefile should support the -g option by default.
+Output file name format is question-<number>
+Note that the Makefile compiles with debug symbols by default.
+Each question that asks you to run a utility like gdb or valgrind will also include a text file showing the output.

@@ -1,4 +1,0 @@
-ch282858@eustis3:~/homework$ gcc question-7.c
-ch282858@eustis3:~/homework$ ./a.out
-free(): invalid pointer
-Aborted (core dumped)
